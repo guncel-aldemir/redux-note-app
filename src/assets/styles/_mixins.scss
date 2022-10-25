@@ -1,0 +1,15 @@
+@mixin display-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin header-title{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+@mixin notes{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

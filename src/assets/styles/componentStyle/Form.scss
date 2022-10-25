@@ -1,0 +1,84 @@
+@use "../../styles/" as *;
+.form{
+   .form-area{
+
+    @include display-center;
+    flex-direction: column;
+    .search{
+        margin-bottom: 20px;
+        .input{
+            width: 300px;
+            padding: 10px 30px;
+            border-radius: 30px;
+            border: none;
+
+        }
+    }
+    .form-bottom{
+        width: 450px;
+        height: 150px;
+        border: 1px solid gray;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+            
+        .textarea{
+            width: 440px;
+            height: 90px;
+            border: none;
+            padding-left: 30px;
+            
+            &:focus{
+              outline: none;
+            }
+        }
+        .form-bottom-side{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .colors{
+                display: flex;
+                gap: 3px;
+                &>button{
+                    width: 30px;
+                    border: none;
+                    border-radius: 100%;
+                }
+                .first-color{
+                    background-color: $first-color;
+                }
+                .second-color{
+                    background-color: $second-color;
+                }
+                .third-color{
+                    background-color: $third-color;
+                }
+                .fourth-color{
+                    background-color: $fourth-color;
+                }
+                .fifth-color{
+                    background-color: $fifth-color;
+                }
+                
+            }
+            .addButton{
+                margin-right: 4px;
+                .add{
+
+                    background-color: $button-color;
+                    padding: 3px 30px ;
+                    border: none;
+                    color: #fff;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+    }
+   
+   }
+   
+}

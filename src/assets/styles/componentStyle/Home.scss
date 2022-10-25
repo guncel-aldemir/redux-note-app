@@ -1,0 +1,16 @@
+@use "../../styles/" as *;
+.row{
+    @include display-center;
+    flex-direction: column;
+    height: 100vh;
+    .home{
+       @extend .row;
+       justify-content: flex-start;
+       height: 45vh;
+       width: 700px;
+       flex-direction: column; 
+       background-color: $background-color-home;
+       border-radius: 30px;
+    }
+
+}

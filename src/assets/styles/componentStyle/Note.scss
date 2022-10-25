@@ -1,0 +1,38 @@
+@use "../../styles/" as *;
+.note{
+    display: flex;
+    width: 200px;
+    flex-direction: row;
+    height: 70px;
+
+    margin-top: 20px;
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;;
+   
+   &>div{
+    align-self: flex-end
+   }
+    &>p{
+        @include notes;
+        color: #fff;
+       
+    }
+}
+.first{
+    background-color: $first-color;
+    
+}
+.second{
+    background-color: $second-color;
+}
+.third{
+    background-color: $third-color;
+}
+.fourth{
+    background-color: $fourth-color;
+}
+.fifth{
+    background-color: $fifth-color;
+}

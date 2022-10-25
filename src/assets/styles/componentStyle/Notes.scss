@@ -1,0 +1,19 @@
+.addNotes{
+width:700px;
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+.notes{
+    width: 100%;
+    &>ul{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+        &>li{
+            list-style-type: none;
+        }
+    }
+}
+  
+}

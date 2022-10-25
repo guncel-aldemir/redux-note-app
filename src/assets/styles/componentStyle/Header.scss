@@ -1,0 +1,11 @@
+@use "../../styles/" as *;
+
+.header{
+    width: 100%;
+    @include display-center;
+    margin:20px 0;
+    .title{
+        @include header-title;
+        color: $text-color;
+    }
+}
