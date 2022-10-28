@@ -10,7 +10,7 @@ const Note = ({text,color,item}) => {
 if(window.confirm("Are You Sure to Delete Note ?"))
 dispatch(deleteNote(key))
   }
-  return <div className={`note ${color} `} key={item.id}>
+  return <div className={`note ${color}`} key={item.id}>
     <div>
     <TiDelete size={20} color="#fff" onClick={()=>handleDelete(item.id)} />
     </div>

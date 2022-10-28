@@ -69,12 +69,21 @@ export const noteSlice = createSlice({
       state.items.splice(index,1);
     },
     filterNote: (state,action)=>{
-        state.filterItem = action.payload;
+      state.filterItem= action.payload;
+
     }
+   
   },
 });
 export const selectNote = (state) => state.notes.items;
 export const selectColors = (state) => state.notes.colors;
 export const selectSelectedColor =(state)=>state.notes.selectColor;
-export const { addNote, toogleCheck,deleteNote } = noteSlice.actions;
+export const  selectFilterNotes = (state)=>{
+if(state.notes.filterItem === ""){
+  return state.notes.items;
+} 
+return state.notes.items.filter((item)=>item.text.includes(state.notes.filterItem) )
+}
+
+export const { addNote, toogleCheck,deleteNote ,filterNote} = noteSlice.actions;
 export default noteSlice.reducer;

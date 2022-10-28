@@ -2,14 +2,15 @@ import React,{useState} from "react";
 import "../../assets/styles/componentStyle/Form.scss";
 import { AiOutlineSearch } from "react-icons/ai";
 import { AiOutlineCheck } from "react-icons/ai";
-import { addNote,toogleCheck,selectColors,selectSelectedColor } from "../../redux/Note/NoteSlice";
+import { addNote,toogleCheck,selectColors,selectSelectedColor, filterNote } from "../../redux/Note/NoteSlice";
 import {useSelector,useDispatch} from "react-redux"
 
 const Form = () => {
   const [text,setText]= useState("")
+ 
   const dispatch = useDispatch()
   const colors = useSelector(selectColors);
-const selectedColor = useSelector(selectSelectedColor);
+  const selectedColor = useSelector(selectSelectedColor);
 
 
   const handleText = async (e)=>{
@@ -23,16 +24,19 @@ if(!text){
 e.preventDefault();
 await dispatch(addNote({text:text, color:selectedColor.name}))
 
-
+setText("")
   }
-
+const handleChange = async (e)=>{
+  
+  dispatch(filterNote(e.target.value))
+}
   
   return (
     <div className="form">
       <form className="form-area" onSubmit={(e)=>e.preventDefault()}>
         <div className="search">
           <AiOutlineSearch size={24} color="#fff" />
-          <input type="search" className="input" placeholder="Search..." />
+          <input type="search" className="input" placeholder="Search..."  onChange={handleChange}/>
         </div>
        
         <div className="form-bottom">
